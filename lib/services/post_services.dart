@@ -10,7 +10,8 @@ import 'package:relate_admin/constants/colors.dart';
 class PostServices {
   final context = BuildContext;
 
-  Future<void> submitComment(context, postTextController, String postId) async {
+  Future<void> submitComment(
+      context, postTextController, String professionalId) async {
     try {
       final commentBody = postTextController.text;
 
@@ -40,7 +41,7 @@ class PostServices {
       };
 
       final postRef =
-          FirebaseFirestore.instance.collection('posts').doc(postId);
+          FirebaseFirestore.instance.collection('posts').doc(professionalId);
 
       // if (commentBody != null) {
       //   Fluttertoast.showToast(

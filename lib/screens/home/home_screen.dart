@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:relate_admin/screens/verify_professionals/verify_professionals_screen.dart';
 import 'package:relate_admin/screens/wellness_centres/add_wellness_centre_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,7 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 10,
           ),
           FilledButton(
-              onPressed: () {}, child: const Text("View Professionals"))
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        const VerifyProfessionalsScreen()));
+              },
+              child: const Text("View Professionals"))
         ],
       ))),
     );
