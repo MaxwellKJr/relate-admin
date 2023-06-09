@@ -10,8 +10,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:relate_admin/components/post/post_bottom_icons.dart';
 
 class CommentsSection extends StatefulWidget {
-  final String postId;
-  const CommentsSection({super.key, required this.postId});
+  final String professionalId;
+  const CommentsSection({super.key, required this.professionalId});
 
   @override
   State<CommentsSection> createState() => _CommentsSectionState();
@@ -24,7 +24,7 @@ class _CommentsSectionState extends State<CommentsSection> {
       child: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance
             .collection('posts')
-            .doc(widget.postId)
+            .doc(widget.professionalId)
             .collection('comments')
             .orderBy('timestamp', descending: true)
             .snapshots(),

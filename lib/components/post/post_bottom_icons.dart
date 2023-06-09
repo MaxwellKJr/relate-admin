@@ -9,10 +9,10 @@ import 'package:relate_admin/constants/image_strings.dart';
 import 'package:relate_admin/constants/size_values.dart';
 
 class PostBottomIcons extends StatefulWidget {
-  final String postId;
+  final String professionalId;
   final List<String> relates;
   const PostBottomIcons(
-      {super.key, required this.postId, required this.relates});
+      {super.key, required this.professionalId, required this.relates});
 
   @override
   State<PostBottomIcons> createState() => _PostBottomIconsState();
@@ -46,8 +46,9 @@ class _PostBottomIconsState extends State<PostBottomIcons>
       fetchCommentsLength();
     });
 
-    DocumentReference postRef =
-        FirebaseFirestore.instance.collection('posts').doc(widget.postId);
+    DocumentReference postRef = FirebaseFirestore.instance
+        .collection('posts')
+        .doc(widget.professionalId);
 
     if (relates) {
       _controller.forward();
@@ -88,8 +89,9 @@ class _PostBottomIconsState extends State<PostBottomIcons>
   }
 
   Future<int> getCommentsLength() async {
-    final document =
-        FirebaseFirestore.instance.collection('posts').doc(widget.postId);
+    final document = FirebaseFirestore.instance
+        .collection('posts')
+        .doc(widget.professionalId);
     final collectionSnapshot = await document.collection('comments').get();
     return collectionSnapshot.docs.length;
   }
