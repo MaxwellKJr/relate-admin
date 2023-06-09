@@ -155,8 +155,6 @@ class _VerifyProfessionalsScreenState extends State<VerifyProfessionalsScreen> {
                                                               softWrap: true,
                                                               style: GoogleFonts
                                                                   .roboto(
-                                                                      color:
-                                                                          primaryColor,
                                                                       fontSize:
                                                                           14.5),
                                                             ),
@@ -164,9 +162,27 @@ class _VerifyProfessionalsScreenState extends State<VerifyProfessionalsScreen> {
                                                                 height: 10),
                                                             isVerified
                                                                 ? Text(
-                                                                    "Verified")
+                                                                    "Verified",
+                                                              style: GoogleFonts
+                                                                  .roboto(
+                                                                      color:
+                                                                          primaryColor,
+                                                                      fontSize:
+                                                                          14.5,
+                                                  fontWeight: FontWeight.w800,
+                                                ),
+                                              )
                                                                 : Text(
-                                                                    "Not Verified"),
+                                                                    "Not Verified",
+                                                              style: GoogleFonts
+                                                                  .roboto(
+                                                                      color:
+                                                                          Colors.red,
+                                                                      fontSize:
+                                                                          14.5,
+fontWeight: FontWeight.w800,
+                                                ),
+                                              ),
                                                           ],
                                                         ),
                                                       ),
